@@ -6,6 +6,9 @@ import(
 	"net/http"
 )
 
+func handler(w http.ResponseWriter, r *http.Request){
+	fmt.Fprintf(w,"Hello there, WTF %s!",r.URL.Path[1:])
+}
 
 func main(){
 	http.HandleFunc("/",handler)
